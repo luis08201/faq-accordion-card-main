@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+</head>
+<body>
+  <main class="container grid">
+    <div class="container--bgi"></div>
+    <picture class="container__picture">
+      <source media="(max-width:1440px)" srcset="img/illustration-woman-online-desktop.svg">
+      <source media="(max-width:600px)" srcset="img/illustration-woman-online-mobile.svg">
+   <img src="img/illustration-woman-online-desktop.svg" alt="illustration woman online photo" class="container__img">  
+      <div class="container__picture--bgi"></div>
+    </picture>
+    <div class="container__body">
+      <div class="container__header">
+        <h1 class="container__header--heading">faq</h1>
+        <div id="container__credits" onclick="modal();"></div>
+      </div>
+      <ul class="container__accordeon">
+        <li class="accordeon__list">
+          <button class="accordeon__list--header toggle">How many team members can I invite?</button>
+          <article class="accordeon__article content">
+            <p class="accordeon__paragraph">
+              You can invite up to 2 additional users on the Free plan. There is no limit on
+              team members for the Premium plan.
+            </p>
+          </article>
+        </li>
+        <li class="accordeon__list">
+          <button class="accordeon__list--header toggle">What is the maximum file upload size?</button>
+          <article class="accordeon__article content">
+            <p class="accordeon__paragraph">
+                No more than 2GB. All files in your account must fit your allotted storage space.
+            </p>
+          </article>
+        </li>
+        <li class="accordeon__list">
+          <button class="accordeon__list--header toggle">How do I reset my password?</button>
+          <article class="accordeon__article content">
+            <p class="accordeon__paragraph">
+              Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.
+            </p>
+          </article>
+        </li>
+        <li class="accordeon__list">
+          <button class="accordeon__list--header toggle">Can I cancel my subscription?</button>
+          <article class="accordeon__article content">
+            <p class="accordeon__paragraph">
+                Yes! Send us a message and we’ll process your request no questions asked.
+            </p>
+          </article>
+        </li>
+        <li class="accordeon__list">
+          <button class="accordeon__list--header toggle">Do you provide additional support? </button>
+          <article class="accordeon__article content">
+            <p class="accordeon__paragraph">
+              Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            </p>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+
+  <div class="attribution" id="attribution">
+    <button class="icon__btn" id="icon__btn" onclick="minimodal();">X</button>
+    <div class="attribution__description">
+      <p class="attribution__paragraph">
+        Challenge by <a class="attribution--link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a class="attribution--link" href="https://github.com/luis08201" target="_blank">Luis Selva</a>.
+      </p>
+    </div>
+  </div>
+  <script src="js/accordeon.js"></script>
+
+ <script>
+    function modal() {
+      const modal = document.getElementById('container__credits');
+      modal.classList.toggle('active');
+      const windowmodal = document.getElementById('attribution');
+      windowmodal.classList.toggle('active');      
+    }
+
+    function minimodal(){
+      const minimodal = document.getElementById('icon__btn');
+      minimodal.classList.toggle('minimodal__active');
+      const windowmodal = document.getElementById('attribution');
+      windowmodal.classList.remove('active');
+    }
+  </script> 
+</body>
+</html>
